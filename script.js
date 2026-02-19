@@ -36,6 +36,7 @@ function eraseEffect() {
         index = (index + 1) % textArray.length;
         setTimeout(typeEffect, 400);
     }
+    
 }
 
 document.addEventListener("DOMContentLoaded", typeEffect);
