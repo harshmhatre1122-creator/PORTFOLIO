@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    // Mobile Menu Toggle
+/* ================= MOBILE NAVIGATION ================= */
+
 const menuToggle = document.getElementById("menu-toggle");
 const mobileNav = document.getElementById("mobile-nav");
 
@@ -8,7 +9,17 @@ if (menuToggle && mobileNav) {
     menuToggle.addEventListener("click", function () {
         mobileNav.classList.toggle("active");
     });
+
+    // Close menu after clicking link
+    const navLinks = mobileNav.querySelectorAll("a");
+
+    navLinks.forEach(link => {
+        link.addEventListener("click", function () {
+            mobileNav.classList.remove("active");
+        });
+    });
 }
+
     /* ================= AOS INIT ================= */
     if (typeof AOS !== "undefined") {
         AOS.init({
