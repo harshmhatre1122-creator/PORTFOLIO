@@ -1,3 +1,7 @@
+body {
+    transition: background 0.4s ease, color 0.4s ease;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -431,4 +435,67 @@ footer {
 .logo img {
     height: 40px;
     filter: drop-shadow(0 0 10px #00f2ff);
+}
+
+/* ===== Theme Switch Position ===== */
+.theme-switch {
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+}
+
+.theme-switch input {
+    display: none;
+}
+
+.switch {
+    width: 48px;
+    height: 24px;
+    background: #222;
+    border-radius: 20px;
+    position: relative;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Toggle circle */
+.switch::before {
+    content: "";
+    width: 18px;
+    height: 18px;
+    background: #00f2ff;
+    position: absolute;
+    top: 3px;
+    left: 4px;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+/* Active state */
+.theme-switch input:checked + .switch {
+    background: #ddd;
+}
+
+.theme-switch input:checked + .switch::before {
+    transform: translateX(22px);
+    background: #ff00ff;
+}
+
+body.light-mode {
+    background: linear-gradient(to bottom, #f5f7fa, #e8ecf3);
+    color: #111;
+}
+
+body.light-mode header {
+    background: rgba(255,255,255,0.8);
+}
+
+body.light-mode .skills-grid div,
+body.light-mode .flip-card-front {
+    background: #ffffff;
+    border: 1px solid #ddd;
+}
+
+body.light-mode nav a {
+    color: #111;
 }
