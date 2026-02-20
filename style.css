@@ -280,3 +280,77 @@ footer {
         width: 250px;
     }
 }
+
+/* PROJECT GRID */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+/* CARD */
+.project-card {
+    position: relative;
+    background: #1a1a2e;
+    padding: 40px 20px;
+    border-radius: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+/* Lift effect */
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 242, 255, 0.3);
+}
+
+/* POPUP ABOVE CARD */
+.project-popup {
+    position: absolute;
+    bottom: 110%;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+
+    width: 280px;
+    background: rgba(20, 20, 40, 0.95);
+    backdrop-filter: blur(15px);
+    border-radius: 15px;
+    padding: 20px;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.4s ease;
+    z-index: 20;
+}
+
+/* Arrow */
+.project-popup::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 8px;
+    border-style: solid;
+    border-color: rgba(20,20,40,0.95) transparent transparent transparent;
+}
+
+/* Show popup */
+.project-card:hover .project-popup {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* Popup text styling */
+.project-popup h4 {
+    color: #00f2ff;
+    margin-bottom: 10px;
+}
+
+.project-popup p {
+    font-size: 0.9rem;
+    color: #ddd;
+    margin-bottom: 8px;
+}
