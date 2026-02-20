@@ -1,5 +1,14 @@
 document.addEventListener("DOMContentLoaded", function () {
 
+    // Mobile Menu Toggle
+const menuToggle = document.getElementById("menu-toggle");
+const mobileNav = document.getElementById("mobile-nav");
+
+if (menuToggle && mobileNav) {
+    menuToggle.addEventListener("click", function () {
+        mobileNav.classList.toggle("active");
+    });
+}
     /* ================= AOS INIT ================= */
     if (typeof AOS !== "undefined") {
         AOS.init({

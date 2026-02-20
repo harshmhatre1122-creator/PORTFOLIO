@@ -310,3 +310,40 @@ footer {
         justify-content: center;
     }
 }
+
+/* ================= MOBILE NAVIGATION ================= */
+@media (max-width: 768px) {
+
+    nav {
+        position: absolute;
+        top: 70px;
+        right: 8%;
+        background: #12162d;
+        flex-direction: column;
+        width: 220px;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+        display: none;
+        animation: fadeIn 0.3s ease;
+    }
+
+    nav a {
+        margin: 12px 0;
+        font-size: 16px;
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+/* Smooth appearance */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
