@@ -2,6 +2,14 @@ html {
     scroll-behavior: smooth;
 }
 
+/* ================= VARIABLES ================= */
+:root {
+    --neon-blue: #00f2ff;
+    --neon-pink: #ff00ff;
+    --dark-bg: #0b0f1e;
+    --panel-bg: #151935;
+}
+
 /* ================= RESET ================= */
 * {
     margin: 0;
@@ -10,11 +18,31 @@ html {
     font-family: 'Space Grotesk', sans-serif;
 }
 
-body {
-    background: #0b0f1e;
-    color: white;
+html, body {
     overflow-x: hidden;
+}
+
+body {
+    background: radial-gradient(circle at top left, #141428, var(--dark-bg));
+    color: white;
     line-height: 1.6;
+}
+
+/* Subtle scan effect */
+body::before {
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        to bottom,
+        rgba(255,255,255,0.02),
+        rgba(255,255,255,0.02) 1px,
+        transparent 1px,
+        transparent 3px
+    );
+    pointer-events: none;
+    z-index: 9999;
 }
 
 /* ================= PARTICLES ================= */
@@ -34,13 +62,16 @@ header {
     position: fixed;
     width: 100%;
     background: rgba(10, 12, 30, 0.75);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(12px);
     z-index: 200;
 }
 
 .logo {
     font-size: 20px;
     font-weight: 700;
+    color: var(--neon-blue);
+    text-shadow: 0 0 10px var(--neon-blue),
+                 0 0 20px var(--neon-blue);
 }
 
 /* Desktop Nav */
@@ -53,10 +84,26 @@ nav a {
     text-decoration: none;
     color: white;
     transition: 0.3s;
+    position: relative;
 }
 
 nav a:hover {
-    color: #00f2ff;
+    color: var(--neon-blue);
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0%;
+    height: 2px;
+    background: var(--neon-pink);
+    transition: 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
 }
 
 .menu-toggle {
@@ -87,17 +134,20 @@ nav a:hover {
 }
 
 .hero-left h1 {
-    font-size: 3rem;
+    font-size: clamp(1.6rem, 5vw, 3rem);
+    white-space: nowrap;
 }
 
 .hero-left span {
-    color: #00f2ff;
+    color: var(--neon-blue);
+    text-shadow: 0 0 15px var(--neon-blue),
+                 0 0 30px var(--neon-blue);
 }
 
 .hero-left h2 {
     margin-top: 10px;
     font-size: 1.6rem;
-    color: #00f2ff;
+    color: var(--neon-blue);
 }
 
 .hero-desc {
@@ -122,22 +172,25 @@ nav a:hover {
 }
 
 .btn {
-    background: linear-gradient(45deg, #00f2ff, #6a5cff);
+    background: linear-gradient(45deg, var(--neon-blue), var(--neon-pink));
     color: black;
+    box-shadow: 0 0 15px var(--neon-blue);
 }
 
 .btn:hover {
-    box-shadow: 0 0 20px #00f2ff;
+    box-shadow: 0 0 25px var(--neon-pink),
+                0 0 40px var(--neon-blue);
 }
 
 .btn-outline {
-    border: 2px solid #00f2ff;
-    color: #00f2ff;
+    border: 2px solid var(--neon-blue);
+    color: var(--neon-blue);
 }
 
 .btn-outline:hover {
-    background: #00f2ff;
+    background: var(--neon-blue);
     color: black;
+    box-shadow: 0 0 20px var(--neon-blue);
 }
 
 /* HERO IMAGE */
@@ -151,6 +204,7 @@ nav a:hover {
     background: radial-gradient(circle, rgba(0,242,255,0.15), transparent 70%);
     padding: 30px;
     border-radius: 50%;
+    box-shadow: 0 0 50px rgba(0,242,255,0.4);
 }
 
 .hero-img {
@@ -175,6 +229,7 @@ section {
 section h2 {
     font-size: 2rem;
     margin-bottom: 30px;
+    color: var(--neon-blue);
 }
 
 /* ================= SKILLS ================= */
@@ -185,16 +240,17 @@ section h2 {
 }
 
 .skills-grid div {
-    background: #151935;
+    background: var(--panel-bg);
     padding: 20px;
     border-radius: 12px;
     text-align: center;
     transition: 0.3s;
+    border: 1px solid rgba(0,242,255,0.3);
 }
 
 .skills-grid div:hover {
     transform: translateY(-6px);
-    box-shadow: 0 8px 20px rgba(0,242,255,0.3);
+    box-shadow: 0 8px 25px rgba(0,242,255,0.4);
 }
 
 /* ================= PROJECTS ================= */
@@ -238,12 +294,17 @@ section h2 {
 }
 
 .flip-card-front {
-    background: #151935;
-    border: 1px solid #2f3270;
+    background: var(--panel-bg);
+    border: 1px solid var(--neon-blue);
+    box-shadow: 0 0 15px rgba(0,242,255,0.3);
+}
+
+.flip-card:hover .flip-card-front {
+    box-shadow: 0 0 25px var(--neon-pink);
 }
 
 .flip-card-back {
-    background: linear-gradient(135deg, #00f2ff, #6a5cff);
+    background: linear-gradient(135deg, var(--neon-blue), var(--neon-pink));
     transform: rotateY(180deg);
 }
 
@@ -262,15 +323,19 @@ footer {
 /* ================= MOBILE ================= */
 @media (max-width: 768px) {
 
-    /* HERO FIX */
+    .hero {
+        padding: 110px 5% 60px 5%;
+    }
+
     .hero-container {
         flex-direction: column;
         text-align: center;
+        align-items: center;
     }
 
     .hero-right {
         order: -1;
-        margin-bottom: 25px;
+        margin-bottom: 20px;
     }
 
     .hero-img {
@@ -278,14 +343,15 @@ footer {
     }
 
     .hero-left h1 {
-        font-size: 1.8rem;
+        font-size: clamp(1.4rem, 6vw, 1.8rem);
     }
 
     .hero-left h2 {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 
     .hero-desc {
+        font-size: 0.9rem;
         margin: 15px auto;
     }
 
@@ -293,20 +359,25 @@ footer {
         justify-content: center;
     }
 
-    /* RIGHT SLIDE MENU */
+    .avatar-wrapper {
+        box-shadow: 0 0 30px rgba(0,242,255,0.3);
+    }
+
+    /* Transparent Mobile Menu */
     nav {
         position: fixed;
         top: 0;
-        right: -260px;
+        right: -250px;
         height: 100vh;
-        width: 240px;
-        background: #12162d;
+        width: 230px;
+        background: rgba(15, 20, 45, 0.6);
+        backdrop-filter: blur(15px);
         flex-direction: column;
         padding-top: 100px;
         padding-left: 30px;
         gap: 30px;
-        transition: right 0.3s ease;
-        box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+        transition: right 0.4s ease;
+        box-shadow: -10px 0 30px rgba(0,0,0,0.4);
     }
 
     nav.active {
