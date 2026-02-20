@@ -36,7 +36,7 @@ function eraseEffect() {
         index = (index + 1) % textArray.length;
         setTimeout(typeEffect, 400);
     }
-    
+
 }
 
 document.addEventListener("DOMContentLoaded", typeEffect);
@@ -50,3 +50,5 @@ particlesJS("particles-js", {
         line_linked: { enable: true, color: "#8a2be2" }
     }
 });
+
+
