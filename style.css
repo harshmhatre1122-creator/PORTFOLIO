@@ -22,27 +22,39 @@ html, body {
     overflow-x: hidden;
 }
 
+/* ================= GAMING BACKGROUND ================= */
 body {
-    background: radial-gradient(circle at top left, #141428, var(--dark-bg));
+    background:
+        radial-gradient(circle at 70% 40%, rgba(0,242,255,0.15), transparent 40%),
+        radial-gradient(circle at 20% 80%, rgba(255,0,255,0.12), transparent 40%),
+        linear-gradient(to bottom, #0b0f1e, #070912);
     color: white;
     line-height: 1.6;
+    position: relative;
 }
 
-/* Subtle scan effect */
+/* Animated Neon Grid Floor */
 body::before {
     content: "";
     position: fixed;
+    bottom: 0;
+    left: 0;
     width: 100%;
-    height: 100%;
-    background: repeating-linear-gradient(
-        to bottom,
-        rgba(255,255,255,0.02),
-        rgba(255,255,255,0.02) 1px,
-        transparent 1px,
-        transparent 3px
-    );
+    height: 55%;
+    background-image:
+        linear-gradient(rgba(0,242,255,0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,242,255,0.08) 1px, transparent 1px);
+    background-size: 60px 60px;
+    transform: perspective(600px) rotateX(60deg);
+    transform-origin: bottom;
+    animation: gridMove 8s linear infinite;
     pointer-events: none;
-    z-index: 9999;
+    z-index: -1;
+}
+
+@keyframes gridMove {
+    0% { background-position: 0 0; }
+    100% { background-position: 0 60px; }
 }
 
 /* ================= PARTICLES ================= */
@@ -50,7 +62,7 @@ body::before {
     position: fixed;
     width: 100%;
     height: 100%;
-    z-index: -1;
+    z-index: -2;
 }
 
 /* ================= HEADER ================= */
@@ -140,8 +152,8 @@ nav a:hover::after {
 
 .hero-left span {
     color: var(--neon-blue);
-    text-shadow: 0 0 15px var(--neon-blue),
-                 0 0 30px var(--neon-blue);
+    text-shadow: 0 0 20px var(--neon-blue),
+                 0 0 40px var(--neon-blue);
 }
 
 .hero-left h2 {
@@ -174,12 +186,12 @@ nav a:hover::after {
 .btn {
     background: linear-gradient(45deg, var(--neon-blue), var(--neon-pink));
     color: black;
-    box-shadow: 0 0 15px var(--neon-blue);
+    box-shadow: 0 0 20px var(--neon-blue);
 }
 
 .btn:hover {
-    box-shadow: 0 0 25px var(--neon-pink),
-                0 0 40px var(--neon-blue);
+    box-shadow: 0 0 35px var(--neon-pink),
+                0 0 50px var(--neon-blue);
 }
 
 .btn-outline {
@@ -190,7 +202,7 @@ nav a:hover::after {
 .btn-outline:hover {
     background: var(--neon-blue);
     color: black;
-    box-shadow: 0 0 20px var(--neon-blue);
+    box-shadow: 0 0 25px var(--neon-blue);
 }
 
 /* HERO IMAGE */
@@ -201,10 +213,10 @@ nav a:hover::after {
 }
 
 .avatar-wrapper {
-    background: radial-gradient(circle, rgba(0,242,255,0.15), transparent 70%);
+    background: radial-gradient(circle, rgba(0,242,255,0.2), transparent 70%);
     padding: 30px;
     border-radius: 50%;
-    box-shadow: 0 0 50px rgba(0,242,255,0.4);
+    box-shadow: 0 0 70px rgba(0,242,255,0.4);
 }
 
 .hero-img {
@@ -250,7 +262,7 @@ section h2 {
 
 .skills-grid div:hover {
     transform: translateY(-6px);
-    box-shadow: 0 8px 25px rgba(0,242,255,0.4);
+    box-shadow: 0 8px 30px rgba(0,242,255,0.5);
 }
 
 /* ================= PROJECTS ================= */
@@ -285,32 +297,53 @@ section h2 {
     height: 100%;
     border-radius: 18px;
     backface-visibility: hidden;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+
+    padding: 25px;
     text-align: center;
+
+    overflow: hidden;
 }
 
-.flip-card-front {
-    background: var(--panel-bg);
-    border: 1px solid var(--neon-blue);
-    box-shadow: 0 0 15px rgba(0,242,255,0.3);
+/* Fix text formatting inside cards */
+.flip-card-front h3,
+.flip-card-back h3 {
+    font-size: 1.2rem;
+    line-height: 1.4;
+    margin-bottom: 10px;
+    word-wrap: break-word;
 }
 
-.flip-card:hover .flip-card-front {
-    box-shadow: 0 0 25px var(--neon-pink);
+.flip-card-front p,
+.flip-card-back p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #dcdcdc;
 }
 
 .flip-card-back {
     background: linear-gradient(135deg, var(--neon-blue), var(--neon-pink));
     transform: rotateY(180deg);
+    color: white;
 }
 
-/* ================= CONTACT ================= */
-#contact p {
-    margin-top: 10px;
+.flip-card-front {
+    background: var(--panel-bg);
+    border: 1px solid var(--neon-blue);
+    box-shadow: 0 0 20px rgba(0,242,255,0.4);
+}
+
+.flip-card:hover .flip-card-front {
+    box-shadow: 0 0 35px var(--neon-pink);
+}
+
+.flip-card-back {
+    background: linear-gradient(135deg, var(--neon-blue), var(--neon-pink));
+    transform: rotateY(180deg);
 }
 
 /* ================= FOOTER ================= */
@@ -360,10 +393,9 @@ footer {
     }
 
     .avatar-wrapper {
-        box-shadow: 0 0 30px rgba(0,242,255,0.3);
+        box-shadow: 0 0 40px rgba(0,242,255,0.3);
     }
 
-    /* Transparent Mobile Menu */
     nav {
         position: fixed;
         top: 0;
@@ -387,4 +419,16 @@ footer {
     .menu-toggle {
         display: block;
     }
+}
+
+
+/* ================= LOGO SIZE ================= */
+.logo img {
+    height: 80px;
+    width: auto;
+    object-fit: contain;
+}
+.logo img {
+    height: 40px;
+    filter: drop-shadow(0 0 10px #00f2ff);
 }
