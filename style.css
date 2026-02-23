@@ -499,3 +499,109 @@ body.light-mode .flip-card-front {
 body.light-mode nav a {
     color: #111;
 }
+
+
+/* ================= IMPROVED LIGHT MODE (FINAL FIX) ================= */
+
+body.light-mode {
+    background: #f8fafc !important;
+    color: #1e293b !important;
+}
+
+/* Remove gaming grid */
+body.light-mode::before {
+    display: none !important;
+}
+
+/* Disable heavy radial gradients */
+body.light-mode {
+    background-image: none !important;
+}
+
+/* Header */
+body.light-mode header {
+    background: #ffffff !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* Logo glow off */
+body.light-mode .logo img {
+    filter: none !important;
+}
+
+/* Navigation */
+body.light-mode nav a {
+    color: #1e293b !important;
+}
+
+body.light-mode nav a:hover {
+    color: #2563eb !important;
+}
+
+body.light-mode nav a::after {
+    background: #2563eb !important;
+}
+
+/* Hero */
+body.light-mode .hero-left span {
+    color: #2563eb !important;
+    text-shadow: none !important;
+}
+
+body.light-mode .hero-left h2 {
+    color: #2563eb !important;
+}
+
+body.light-mode .hero-desc {
+    color: #475569 !important;
+}
+
+/* Buttons */
+body.light-mode .btn {
+    background: linear-gradient(45deg, #2563eb, #3b82f6) !important;
+    box-shadow: none !important;
+    color: white !important;
+}
+
+body.light-mode .btn-outline {
+    border: 2px solid #2563eb !important;
+    color: #2563eb !important;
+}
+
+body.light-mode .btn-outline:hover {
+    background: #2563eb !important;
+    color: white !important;
+}
+
+/* Cards */
+body.light-mode .skills-grid div,
+body.light-mode .flip-card-front {
+    background: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05) !important;
+}
+
+body.light-mode .flip-card-back {
+    background: linear-gradient(135deg, #2563eb, #3b82f6) !important;
+}
+
+/* Section headings */
+body.light-mode section h2 {
+    color: #2563eb !important;
+}
+
+/* ================= MOBILE FIX ================= */
+@media (max-width: 768px) {
+
+    body.light-mode nav {
+        background: #ffffff !important;
+    }
+
+    body.light-mode header {
+        background: #ffffff !important;
+    }
+
+    body.light-mode .hero-left h1 {
+        white-space: normal !important;
+    }
+}
