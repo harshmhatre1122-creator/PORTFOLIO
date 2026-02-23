@@ -5,74 +5,62 @@
 <title>Harsh Krishna Mhatre | Portfolio</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div id="particles-js"></div>
-
 <header>
-    <div class="logo">
-    
+    <div class="logo">Harsh.</div>
+
+    <nav id="nav">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+
+        <div class="theme-switch">
+            <input type="checkbox" id="theme-toggle">
+            <label for="theme-toggle" class="switch"></label>
+        </div>
+    </nav>
+
     <div class="menu-toggle" id="menu-toggle">☰</div>
-
-<nav id="mobile-nav">
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-
-    <div class="theme-switch">
-        <input type="checkbox" id="theme-toggle">
-        <label for="theme-toggle" class="switch"></label>
-    </div>
-</nav>
 </header>
 
 <section class="hero">
-
     <div class="hero-container">
 
         <div class="hero-left">
             <h1>Hi, I'm <span>Harsh Krishna Mhatre</span></h1>
-
             <h2><span id="typing"></span></h2>
 
-            <p class="hero-desc">
+            <p>
                 AR/VR Developer | Unity Specialist | AI Explorer  
-                Building immersive digital experiences.
+                Building immersive, scalable digital experiences.
             </p>
 
             <div class="buttons">
                 <a href="#projects" class="btn">Explore Work</a>
-                <a href="resume.pdf" download class="btn-outline">
-                    Download Resume
-                </a>
+                <a href="resume.pdf" class="btn-outline" download>Download Resume</a>
             </div>
         </div>
 
         <div class="hero-right">
-            <div class="avatar-wrapper">
-                <img src="images/ai-character.png" class="hero-img">
-            </div>
+            <img src="images/ai-character.png" alt="Avatar">
         </div>
 
     </div>
-
 </section>
 
 <section id="about">
     <h2>About Me</h2>
     <p>
-    I am an AR/VR developer and software engineer with experience in immersive application development, 
-    full-stack web technologies, and AI-driven systems. My technical expertise includes Unity, C#, JavaScript, 
-    Python, React, Node.js, OpenCV, and data visualization tools.
-
-    I specialize in building scalable web applications, real-time simulations, and intelligent systems that 
-    integrate AI and interactive technologies. I am passionate about continuous learning and applying innovative 
-    solutions to real-world challenges.
+        I am a software developer specializing in AR/VR, full-stack development, and AI-driven systems.
+        My expertise spans Unity, C#, JavaScript, Python, React, Node.js, and data visualization tools.
+        I enjoy building immersive applications, intelligent systems, and scalable web platforms
+        that solve real-world problems.
     </p>
 </section>
 
@@ -82,8 +70,8 @@
         <div>Python</div>
         <div>JavaScript</div>
         <div>Unity</div>
-        <div>AR/VR</div>
-        <div>Power BI</div>
+        <div>React</div>
+        <div>Node.js</div>
         <div>OpenCV</div>
         <div>Blender</div>
         <div>Git</div>
@@ -95,72 +83,24 @@
 
     <div class="project-grid">
 
-        <!-- Project 1 -->
-        <div class="flip-card">
-            <div class="flip-card-inner">
-
-                <div class="flip-card-front">
-                    <h3>Hololens Droplet Detection</h3>
-                </div>
-
-                <div class="flip-card-back">
-                    <h4>Hololens Droplet Detection</h4>
-                    <p>AR-based droplet detection system built using Microsoft Hololens for real-time safety monitoring during Covid research.</p>
-                    <p><strong>Tech:</strong> Unity, C#, Hololens SDK</p>
-                </div>
-
-            </div>
+        <div class="card">
+            <h3>Hololens Droplet Detection</h3>
+            <p>AR safety monitoring system using Unity & Hololens.</p>
         </div>
 
-        <!-- Project 2 -->
-        <div class="flip-card">
-            <div class="flip-card-inner">
-
-                <div class="flip-card-front">
-                    <h3>Fingerprint Feature Extraction</h3>
-                </div>
-
-                <div class="flip-card-back">
-                    <h4>Fingerprint Feature Extraction</h4>
-                    <p>Biometric comparison system using OpenCV for fingerprint matching and feature detection algorithms.</p>
-                    <p><strong>Tech:</strong> Python, OpenCV</p>
-                </div>
-
-            </div>
+        <div class="card">
+            <h3>Fingerprint Feature Extraction</h3>
+            <p>Biometric system using Python & OpenCV.</p>
         </div>
 
-        <!-- Project 3 -->
-        <div class="flip-card">
-            <div class="flip-card-inner">
-
-                <div class="flip-card-front">
-                    <h3>AR 3D Image Converter</h3>
-                </div>
-
-                <div class="flip-card-back">
-                    <h4>AR 3D Image Converter</h4>
-                    <p>Unity + Vuforia based AR system that converts 2D images into interactive 3D augmented experiences.</p>
-                    <p><strong>Tech:</strong> Unity, Vuforia</p>
-                </div>
-
-            </div>
+        <div class="card">
+            <h3>AR 3D Image Converter</h3>
+            <p>2D to interactive 3D AR system using Unity.</p>
         </div>
 
-        <!-- Project 4 -->
-        <div class="flip-card">
-            <div class="flip-card-inner">
-
-                <div class="flip-card-front">
-                    <h3>Virtual Alchemy Lab</h3>
-                </div>
-
-                <div class="flip-card-back">
-                    <h4>Virtual Alchemy Lab</h4>
-                    <p>Interactive chemistry simulation built in Unity allowing students to perform virtual experiments.</p>
-                    <p><strong>Tech:</strong> Unity, C#</p>
-                </div>
-
-            </div>
+        <div class="card">
+            <h3>Virtual Alchemy Lab</h3>
+            <p>Interactive VR chemistry simulation.</p>
         </div>
 
     </div>
@@ -169,15 +109,12 @@
 <section id="contact">
     <h2>Contact</h2>
     <p>Email: harshmhatre1122@gmail.com</p>
-    <p>Contact No: 9821701242</p>
 </section>
 
 <footer>
     © 2026 Harsh Krishna Mhatre
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
 <script src="script.js"></script>
-
 </body>
 </html>
