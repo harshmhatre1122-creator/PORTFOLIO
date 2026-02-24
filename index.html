@@ -1,120 +1,259 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Harsh Krishna Mhatre | Portfolio</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Harsh Krishna Mhatre | AR/VR Developer</title>
+
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="icon" type="image/png" href="./logo.png">
 </head>
 
 <body>
 
-<header>
-    <div class="logo">Harsh.</div>
+  <!-- NAVBAR -->
+  <header class="nav" id="navbar">
+    <div class="nav-inner">
 
-    <nav id="nav">
+      <div class="logo">HM<span>.</span></div>
+
+      <nav class="nav-links">
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
+      </nav>
 
-        <div class="theme-switch">
-            <input type="checkbox" id="theme-toggle">
-            <label for="theme-toggle" class="switch"></label>
+      <div class="theme-switch" id="themeToggle">
+        <div class="switch-track">
+          <div class="switch-thumb"></div>
         </div>
-    </nav>
-
-    <div class="menu-toggle" id="menu-toggle">☰</div>
-</header>
-
-<section class="hero">
-    <div class="hero-container">
-
-        <div class="hero-left">
-            <h1>Hi, I'm <span>Harsh Krishna Mhatre</span></h1>
-            <h2><span id="typing"></span></h2>
-
-            <p>
-                AR/VR Developer | Unity Specialist | AI Explorer  
-                Building immersive, scalable digital experiences.
-            </p>
-
-            <div class="buttons">
-                <a href="#projects" class="btn">Explore Work</a>
-                <a href="resume.pdf" class="btn-outline" download>Download Resume</a>
-            </div>
-        </div>
-
-        <div class="hero-right">
-            <img src="images/ai-character.png" alt="Avatar">
-        </div>
+      </div>
 
     </div>
-</section>
+  </header>
 
-<section id="about">
-    <h2>About Me</h2>
-    <p>
-        I am a software developer specializing in AR/VR, full-stack development, and AI-driven systems.
-        My expertise spans Unity, C#, JavaScript, Python, React, Node.js, and data visualization tools.
-        I enjoy building immersive applications, intelligent systems, and scalable web platforms
-        that solve real-world problems.
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-wrapper">
+
+      <!-- LEFT -->
+      <div class="hero-content">
+        <h1>Hi, I'm <span>Harsh Krishna Mhatre</span></h1>
+
+        <p class="availability-badge">
+          🟢 Open to AR/VR & Software Development Roles (2026)
+        </p>
+
+        <p class="subtitle">
+          <span class="typing-box">
+            <span id="typing"></span>
+          </span>
+        </p>
+
+        <p class="description">
+          Final-year Computer Engineering student (2026 batch) specializing in 
+          AR/VR development using Unity, interactive web experiences, 
+          and AI-powered applications.
+        </p>
+
+        <div class="cta">
+          <a href="#projects" class="btn">View Projects</a>
+          <a href="./Resume.pdf" class="btn secondary" download>Download Resume</a>
+          <a href="#contact" class="btn secondary">Contact Me</a>
+        </div>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="hero-visual">
+        <div class="hero-bg"></div>
+        <img src="./images/ai-character.png" alt="Harsh Krishna Mhatre" class="hero-img" />
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ABOUT -->
+  <section id="about" class="about-section">
+    <div class="about-container">
+
+      <div class="about-image-wrapper">
+        <div class="image-glass-backdrop"></div>
+        <img src="ai-character.png" alt="Harsh Krishna Mhatre">
+      </div>
+
+      <div class="about-content glass-card">
+        <h2 class="section-title-left">About Me</h2>
+
+        <div class="about-text">
+          <p>
+            I’m a <strong>final-year Computer Engineering student (2026 batch)</strong>
+            passionate about building immersive digital experiences using 
+            <strong>Unity, AR/VR technologies, and modern web frameworks</strong>.
+          </p>
+
+          <p>
+            I develop interactive VR simulations, 3D mapping systems, 
+            and AI-powered applications. My work blends creativity, 
+            performance optimization, and user-focused design.
+          </p>
+
+          <p class="hiring-status">
+            Currently <strong>seeking AR/VR, Unity, or Software Developer roles</strong>
+            where I can build innovative immersive systems.
+          </p>
+        </div>
+
+        <div class="about-stats">
+          <div class="stat-item">
+            <span class="stat-value">2026</span>
+            <label class="stat-label">Graduation</label>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">AR/VR</span>
+            <label class="stat-label">Core Focus</label>
+          </div>
+          <div class="stat-item highlight">
+            <span class="stat-value">Unity</span>
+            <label class="stat-label">Specialization</label>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- SKILLS -->
+  <section id="skills" class="skills-section">
+    <h2 class="section-title">Technical Expertise</h2>
+
+    <div class="skills-wrapper">
+
+      <div class="skill-card core-focus">
+        <h3>AR/VR & Game Development</h3>
+        <div class="skill-tags">
+          <span>Unity</span>
+          <span>Oculus</span>
+          <span>C#</span>
+          <span>VR Simulator</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <h3>Web Development</h3>
+        <div class="skill-tags">
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>JavaScript</span>
+          <span>React</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <h3>AI & Backend</h3>
+        <div class="skill-tags">
+          <span>Python</span>
+          <span>Flask</span>
+          <span>OpenAI API</span>
+          <span>Automation</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <h3>Tools</h3>
+        <div class="skill-tags">
+          <span>Git</span>
+          <span>VS Code</span>
+          <span>Firebase</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- PROJECTS -->
+  <section id="projects" class="projects-section">
+    <h2 class="section-title">Projects</h2>
+
+    <div class="projects-container">
+
+      <div class="project-card">
+        <h3>Virtual Alchemy Lab</h3>
+        <p>
+          Fantasy-based VR project where users mix magical ingredients 
+          and create potions in an immersive 3D lab using Unity and Oculus.
+        </p>
+      </div>
+
+      <div class="project-card">
+        <h3>University 3D Mapping (VR Navigation)</h3>
+        <p>
+          VR-based campus navigation system that allows users 
+          to explore university infrastructure virtually.
+        </p>
+      </div>
+
+      <div class="project-card">
+        <h3>AlphaWolf AI</h3>
+        <p>
+          AI chatbot platform integrated with OpenAI API 
+          capable of generating responses and AI images.
+        </p>
+      </div>
+
+      <div class="project-card">
+        <h3>Space Shooter Game</h3>
+        <p>
+          HTML5 Canvas-based arcade shooting game with boss mechanics,
+          power-ups, and dynamic difficulty scaling.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact-section">
+
+    <h2 class="section-title">Get in Touch</h2>
+    <p class="contact-subtitle">
+      Let’s collaborate on immersive tech, VR projects, or innovative web applications.
     </p>
-</section>
 
-<section id="skills">
-    <h2>Tech Stack</h2>
-    <div class="skills-grid">
-        <div>Python</div>
-        <div>JavaScript</div>
-        <div>Unity</div>
-        <div>React</div>
-        <div>Node.js</div>
-        <div>OpenCV</div>
-        <div>Blender</div>
-        <div>Git</div>
-    </div>
-</section>
+    <div class="contact-grid">
 
-<section id="projects">
-    <h2>Projects</h2>
+      <a href="mailto:harshmhatre1122@gmail.com" class="contact-card">
+        <span>✉️</span>
+        <h3>Email</h3>
+        <p>harshmhatre1122@gmail.com</p>
+      </a>
 
-    <div class="project-grid">
+      <a href="https://github.com/harshmhatre1122-creator" target="_blank" class="contact-card">
+        <span>💻</span>
+        <h3>GitHub</h3>
+        <p>github.com/harshmhatre1122-creator</p>
+      </a>
 
-        <div class="card">
-            <h3>Hololens Droplet Detection</h3>
-            <p>AR safety monitoring system using Unity & Hololens.</p>
-        </div>
-
-        <div class="card">
-            <h3>Fingerprint Feature Extraction</h3>
-            <p>Biometric system using Python & OpenCV.</p>
-        </div>
-
-        <div class="card">
-            <h3>AR 3D Image Converter</h3>
-            <p>2D to interactive 3D AR system using Unity.</p>
-        </div>
-
-        <div class="card">
-            <h3>Virtual Alchemy Lab</h3>
-            <p>Interactive VR chemistry simulation.</p>
-        </div>
+      <a href="#" class="contact-card">
+        <span>🔗</span>
+        <h3>LinkedIn</h3>
+        <p>Add your LinkedIn link</p>
+      </a>
 
     </div>
-</section>
 
-<section id="contact">
-    <h2>Contact</h2>
-    <p>Email: harshmhatre1122@gmail.com</p>
-</section>
+  </section>
 
-<footer>
+  <footer>
     © 2026 Harsh Krishna Mhatre
-</footer>
+  </footer>
 
-<script src="script.js"></script>
+  <script src="./script.js"></script>
 </body>
+
 </html>
