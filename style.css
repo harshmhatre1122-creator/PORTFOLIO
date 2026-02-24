@@ -397,3 +397,167 @@ footer {
     display: none;
   }
 }
+
+/* =========================================
+   MOBILE NAVBAR
+========================================= */
+
+@media (max-width: 900px) {
+
+  .nav-links {
+    position: fixed;
+    top: 70px;
+    right: -100%;
+    width: 250px;
+    height: 100vh;
+    background: rgba(10, 15, 28, 0.95);
+    backdrop-filter: blur(20px);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 40px 25px;
+    gap: 25px;
+    transition: 0.4s ease;
+  }
+
+  body.light .nav-links {
+    background: rgba(255, 255, 255, 0.95);
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  .nav-links a {
+    font-size: 18px;
+  }
+
+  /* Hamburger button */
+  .menu-toggle {
+    display: block;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+}
+
+/* Hide hamburger on desktop */
+.menu-toggle {
+  display: none;
+}
+
+
+/* =========================================
+   HERO MOBILE
+========================================= */
+
+@media (max-width: 900px) {
+
+  .hero {
+    padding-top: 100px;
+  }
+
+  .hero-wrapper {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .hero-content h1 {
+    font-size: 32px;
+  }
+
+  .subtitle {
+    font-size: 18px;
+  }
+
+  .description {
+    font-size: 15px;
+    max-width: 100%;
+  }
+
+  .hero-img {
+    width: 220px;
+  }
+
+  .cta {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+}
+
+
+/* =========================================
+   ABOUT MOBILE
+========================================= */
+
+@media (max-width: 900px) {
+
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-image-wrapper img {
+    width: 220px;
+  }
+
+  .about-stats {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+}
+
+
+/* =========================================
+   SKILLS MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .skills-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+/* =========================================
+   PROJECTS MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .projects-container {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card {
+    padding: 20px;
+  }
+
+}
+
+
+/* =========================================
+   CONTACT MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-card {
+    padding: 20px;
+  }
+
+}

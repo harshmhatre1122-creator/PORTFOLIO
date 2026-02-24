@@ -1,7 +1,8 @@
-const menuToggle = document.getElementById('menu-toggle');
-const nav = document.getElementById('nav');
+const menuToggle = document.getElementById("menu-toggle");
+const navLinks = document.querySelector(".nav-links");
 
-menuToggle.addEventListener('click', () => {
-    nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
-    // Add logic here to style the mobile nav (e.g., vertical stack)
-});
+if (menuToggle) {
+  menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
+}
