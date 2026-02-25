@@ -561,3 +561,124 @@ footer {
   }
 
 }
+
+
+/* ===============================
+   SCROLL REVEAL Animation smooth
+=================================*/
+
+.reveal {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Animation on the hero character */
+
+@keyframes floatHero {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+.hero-img {
+  animation: floatHero 4s ease-in-out infinite;
+}
+
+.project-card {
+  transition: transform 0.2s ease;
+  transform-style: preserve-3d;
+}
+
+
+/* Neon Background Glow */
+
+body::before {
+  content: "";
+  position: fixed;
+  top: -200px;
+  left: -200px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(0,245,255,0.15) 0%, transparent 70%);
+  animation: moveGlow 10s linear infinite alternate;
+  z-index: -1;
+}
+
+@keyframes moveGlow {
+  0% { transform: translate(0,0); }
+  100% { transform: translate(200px,200px); }
+}
+
+/* ===============================
+   SPACE VR BACKGROUND
+=================================*/
+
+.space-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -3;
+  background: radial-gradient(circle at bottom, #0a0f1c 0%, #000814 100%);
+}
+
+/* Small stars */
+.stars,
+.stars2,
+.stars3 {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background-repeat: repeat;
+  animation: moveStars 100s linear infinite;
+}
+
+/* Layer 1 */
+.stars {
+  background-image:
+    radial-gradient(2px 2px at 20px 30px, #ffffff, transparent),
+    radial-gradient(1px 1px at 100px 150px, #ffffff, transparent),
+    radial-gradient(1.5px 1.5px at 200px 80px, #ffffff, transparent),
+    radial-gradient(2px 2px at 300px 200px, #ffffff, transparent);
+  background-size: 400px 400px;
+  animation-duration: 120s;
+}
+
+/* Layer 2 */
+.stars2 {
+  background-image:
+    radial-gradient(2px 2px at 50px 100px, #00f5ff, transparent),
+    radial-gradient(1px 1px at 150px 250px, #00f5ff, transparent),
+    radial-gradient(2px 2px at 250px 180px, #00f5ff, transparent);
+  background-size: 600px 600px;
+  animation-duration: 180s;
+  opacity: 0.6;
+}
+
+/* Layer 3 (far depth) */
+.stars3 {
+  background-image:
+    radial-gradient(1px 1px at 120px 220px, #ffffff, transparent),
+    radial-gradient(1px 1px at 350px 100px, #ffffff, transparent);
+  background-size: 800px 800px;
+  animation-duration: 250s;
+  opacity: 0.4;
+}
+
+@keyframes moveStars {
+  from { transform: translateY(0); }
+  to { transform: translateY(-1000px); }
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+  .stars,
+  .stars2,
+  .stars3 {
+    animation-duration: 200s;
+  }
+}
