@@ -97,9 +97,6 @@ document.querySelectorAll(".project-card").forEach(card => {
     });
 });
 
-
-
-
 const projectCards = document.querySelectorAll(".project-card");
 
 projectCards.forEach(card => {
