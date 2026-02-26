@@ -686,3 +686,112 @@ body::before {
   margin: 0;
   line-height: 1.5;
 }
+
+/* =========================================
+   HERO MOBILE FIX
+========================================= */
+
+@media (max-width: 768px) {
+
+  .hero {
+    padding-top: 100px;
+    min-height: auto;
+  }
+
+  .hero-wrapper {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .hero-content h1 {
+    font-size: 32px;
+    line-height: 1.2;
+  }
+
+  .hero-content h1 span {
+    display: inline-block;
+  }
+
+  .subtitle {
+    font-size: 16px;
+  }
+
+  .description {
+    font-size: 14px;
+    max-width: 100%;
+    margin: 0 auto 20px;
+  }
+
+  .hero-img {
+    width: 220px;
+  }
+
+  .cta {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .btn {
+    width: 80%;
+    text-align: center;
+  }
+}
+
+
+/* =========================================
+   ABOUT MOBILE FIX
+========================================= */
+
+@media (max-width: 768px) {
+
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .about-image-wrapper img {
+    width: 200px;
+  }
+
+  .glass-card {
+    padding: 20px;
+  }
+
+  .about-text p {
+    font-size: 14px;
+  }
+
+  .about-stats {
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+}
+
+/* =========================================
+   HERO IMAGE ON TOP (MOBILE)
+========================================= */
+
+/* HERO IMAGE ON TOP (MOBILE) */
+@media (max-width: 768px) {
+  .hero-wrapper {
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-visual {
+    order: -1;
+    margin-bottom: 20px;
+  }
+}
+  .hero-img {
+    width: 220px;
+  }
+
+    
