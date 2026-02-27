@@ -311,6 +311,7 @@ body.light .switch-thumb {
 .projects-section {
   padding: 120px 8%;
   background: linear-gradient(to bottom, #081421, #020c1a);
+  overflow: visible; /* IMPORTANT */
 }
 
 .projects-wrapper {
@@ -437,6 +438,9 @@ body.light .switch-thumb {
 /* ===== ARROWS ===== */
 
 .nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
   background: transparent;
   border: 1px solid #00f5ff;
   color: #00f5ff;
@@ -444,7 +448,15 @@ body.light .switch-thumb {
   padding: 10px 15px;
   border-radius: 10px;
   cursor: pointer;
-  margin: 0 20px;
+  z-index: 5;
+}
+
+.nav-btn.prev {
+  left: -40px;
+}
+
+.nav-btn.next {
+  right: -40px;
 }
 
 /* ===== MOBILE ===== */
